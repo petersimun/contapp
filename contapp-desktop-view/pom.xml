@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+        <parent>
+                <groupId>sk.seges.contapp</groupId>
+                <artifactId>contapp-parent</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+                <relativePath>../contapp-parent</relativePath>
+        </parent>
+        <modelVersion>4.0.0</modelVersion>
+        <artifactId>contapp-desktop-view</artifactId>
+        <packaging>jar</packaging>
+        <name>Contapp View for desktop browsers</name>
+
+	<dependencies>
+		<!-- Acris dependencies -->
+		<dependency>
+		        <groupId>sk.seges.acris</groupId>
+		        <artifactId>acris-widgets</artifactId>
+		</dependency>
+		<dependency>
+		        <groupId>sk.seges.acris</groupId>
+		        <artifactId>acris-widgets</artifactId>
+		        <classifier>sources</classifier>
+		</dependency>
+		
+		<!-- Luna dependencies -->
+		<dependency>
+		        <groupId>${project.groupId}</groupId>
+		        <artifactId>contapp-presenter</artifactId>
+		</dependency>
+		<dependency>
+		        <groupId>${project.groupId}</groupId>
+		        <artifactId>contapp-presenter</artifactId>
+		        <classifier>sources</classifier>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<classifier>sources</classifier>
+		</dependency>
+		
+	</dependencies>
+</project>
+

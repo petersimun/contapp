@@ -1,0 +1,7 @@
+.dateFilter {
+	width: 50% !important;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	height: 42px !important;
+}

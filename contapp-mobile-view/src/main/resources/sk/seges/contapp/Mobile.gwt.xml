@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "//gwt-module/" "http://google-web-toolkit.googlecode.com/svn/tags/2.0.0-ms1/distro-source/core/src/gwt-module.dtd">
+<module rename-to="contapp">
+        <inherits name='com.google.gwt.user.User'/>
+
+        <inherits name='sk.seges.contapp.Presenter'/>
+  		<inherits name="com.googlecode.mgwt.MGWT" />
+        
+  		<inherits name='com.googlecode.gwtphonegap.PhoneGap' />
+  		
+        <source path="mobile/client" />
+
+        <set-property name="mgwt.os" value="android_tablet" />
+        <set-property name="mobile.user.agent" value="not_mobile"/>
+        <set-property name="phonegap.env" value="no"/>
+        
+        <replace-with class="sk.seges.contapp.mobile.client.configuration.MobileClientFactory">
+            <all>
+		        <when-type-is class="sk.seges.contapp.client.configuration.ClientFactory"/>
+		        <when-property-is name="mobile.user.agent" value="mobilesafari" />
+			</all>
+    	</replace-with>
+</module>

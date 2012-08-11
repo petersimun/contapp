@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.0.3//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.0.3/distro-source/core/src/gwt-module.dtd">
+<module>
+
+    <inherits name="sk.seges.contapp.Service" />
+    <inherits name="com.google.gwt.activity.Activity"/>
+    <inherits name="com.google.gwt.place.Place"/>
+
+	<source path="client/activity" />
+	<source path="client/callback" />
+    <source path="client/configuration" />
+	<source path="client/display" />
+	<source path="client/event" />
+	<source path="client/place" />
+	<source path="client/entry" />
+		
+</module>

@@ -1,0 +1,25 @@
+.title {
+	font-weight: bold;
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+.page {
+	
+}
+
+.tableHolder>table {
+	margin: 0 auto;
+}
+
+.formHolder>div {
+	height: 100%;
+}
+
+.formHolder .gwt-HTML {
+	float: left;
+}
+
+.floatRight {
+	float: right;
+}

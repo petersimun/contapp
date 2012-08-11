@@ -1,0 +1,24 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:c="urn:import:com.google.gwt.user.cellview.client">
+
+    <g:HorizontalPanel height="100%" width="100%" styleName="detail" horizontalAlignment="center">
+        <g:VerticalPanel height="100%" width="25%" styleName="detailColumn">
+            <g:FlowPanel>
+	            <g:HTML>First Name:</g:HTML>
+	            <g:Label ui:field="firstName"/>
+				<g:HTML>Last Name:</g:HTML>
+	            <g:Label ui:field="lastName"/>
+			</g:FlowPanel>
+        </g:VerticalPanel>
+        <g:VerticalPanel height="100%" width="25%">
+            <g:FlowPanel>
+	            <g:HTML>Phone:</g:HTML>
+	            <g:Label ui:field="phone"/>
+				<g:HTML>E-mail:</g:HTML>
+	            <g:Label ui:field="email"/>
+	        </g:FlowPanel>
+        </g:VerticalPanel>
+    </g:HorizontalPanel>
+</ui:UiBinder>
