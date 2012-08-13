@@ -10,9 +10,9 @@
   		
         <source path="mobile/client" />
 
-        <set-property name="mgwt.os" value="android_tablet" />
+        <!-- set-property name="mgwt.os" value="android_tablet" />
         <set-property name="mobile.user.agent" value="not_mobile"/>
-        <set-property name="phonegap.env" value="no"/>
+        <set-property name="phonegap.env" value="no"/-->
         
         <replace-with class="sk.seges.contapp.mobile.client.configuration.MobileClientFactory">
             <all>
