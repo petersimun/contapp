@@ -37,15 +37,12 @@ public abstract class AbstractTableView extends AbstractView implements TableDis
 		tables.put(clazz, table);
 		table.setDataProvider(asyncDataProvider);
 
-		Window.alert("Pridavam" + clazz.getName());
-		
 		if (callbacks.get(clazz) != null) {
 			Scheduler.get().scheduleDeferred(new ScheduledCommand() {
 				
 				@Override
 				public void execute() {
 					List<AsyncCallback<AbstractFilterableTable<?>>> asyncCallbacks = callbacks.get(clazz);
-					Window.alert("Callbackujem" + clazz.getName());
 					callbacks.remove(clazz);
 					for (AsyncCallback<AbstractFilterableTable<?>> callback: asyncCallbacks) {
 						callback.onSuccess(table);
@@ -59,8 +56,6 @@ public abstract class AbstractTableView extends AbstractView implements TableDis
 	@SuppressWarnings("unchecked")
 	protected <T> void getDataTable(Class<T> clazz, AsyncCallback<AbstractFilterableTable<T>> callback) {
 		AbstractFilterableTable<T> table = (AbstractFilterableTable<T>) tables.get(clazz);
-
-		Window.alert("Zistujem" + clazz.getName());
 
 		if (table != null) {
 			callback.onSuccess(table);
