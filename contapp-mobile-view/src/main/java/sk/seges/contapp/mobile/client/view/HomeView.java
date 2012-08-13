@@ -15,6 +15,7 @@ import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
@@ -85,7 +86,7 @@ public class HomeView extends Composite implements HomeDisplay {
 	}
 
 	@Override
-	public <T> HandlerRegistration addSelectionHandler(SelectionChangedEventHandler handler, Class<T> clazz) {
-		return localEventBus.addHandler(SelectionChangedEvent.getAssociatedType(clazz), handler);
+	public <T> void addSelectionHandler(SelectionChangedEventHandler handler, Class<T> clazz, AsyncCallback<HandlerRegistration> callback) {
+		callback.onSuccess(localEventBus.addHandler(SelectionChangedEvent.getAssociatedType(clazz), handler));
 	}
 }

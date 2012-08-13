@@ -1,6 +1,7 @@
 package sk.seges.contapp.desktop.client.view;
 
 import sk.seges.acris.widget.client.celltable.AbstractFilterableTable;
+import sk.seges.contapp.client.callback.DefaultAsyncCallback;
 import sk.seges.contapp.client.display.HomeDisplay;
 import sk.seges.contapp.client.event.SelectionChangedEvent;
 import sk.seges.contapp.client.event.handler.SelectionChangedEventHandler;
@@ -14,7 +15,7 @@ import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.SimplePager;
-import com.google.gwt.user.client.DOM;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
@@ -62,15 +63,20 @@ public class HomeView extends AbstractTableView implements HomeDisplay {
 	}
 	
 	@Override
-	public <T> HandlerRegistration addSelectionHandler(final SelectionChangedEventHandler handler, final Class<T> clazz) {
-		return getDataTable(clazz).getSelectionModel().addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
+	public <T> void addSelectionHandler(final SelectionChangedEventHandler handler, final Class<T> clazz, final AsyncCallback<HandlerRegistration> result) {
+		getDataTable(clazz, new DefaultAsyncCallback<AbstractFilterableTable<T>>() {
 
 			@Override
-			public void onSelectionChange(SelectionChangeEvent event) {
-				T selectedItem = getDataTable(clazz).getSelectedItem();
-				handler.onSelectionChanged(new SelectionChangedEvent<T>(selectedItem, clazz));
+			public void onSuccess(final AbstractFilterableTable<T> dataTable) {
+				result.onSuccess(dataTable.getSelectionModel().addSelectionChangeHandler(new SelectionChangeEvent.Handler() {
+
+					@Override
+					public void onSelectionChange(SelectionChangeEvent event) {
+						T selectedItem = dataTable.getSelectedItem();
+						handler.onSelectionChanged(new SelectionChangedEvent<T>(selectedItem, clazz));
+					}
+				}));
 			}
 		});
 	}
-
 }

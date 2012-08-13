@@ -15,6 +15,7 @@ import sk.seges.sesam.dao.Page;
 import sk.seges.sesam.dao.PagedResult;
 
 import com.google.gwt.event.shared.EventBus;
+import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 
@@ -33,13 +34,20 @@ public class HomeActivity extends ContappActivity<HomeDisplay> implements HomeDi
         
         clientFactory.getActivityRegistry().registerActivityMapper(new DetailActivityMapper(clientFactory), 
         		clientFactory.getViews().getContactDetailHolder());
-		
+
         getServices().getContactService().getContacts(Page.ALL_RESULTS_PAGE, new DefaultAsyncCallback<PagedResult<List<Contact>>>() {
 
 			@Override
 			public void onSuccess(PagedResult<List<Contact>> result) {
 				getView().setData(result.getResult(), Contact.class, result.getTotalResultCount());
-				register(getView().addSelectionHandler(HomeActivity.this, Contact.class));
+				
+				getView().addSelectionHandler(HomeActivity.this, Contact.class, new DefaultAsyncCallback<HandlerRegistration>() {
+
+					@Override
+					public void onSuccess(HandlerRegistration handler) {
+						register(handler);
+					}
+				});
 			}
         });
 	}

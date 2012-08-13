@@ -48,3 +48,23 @@ contapp-web/.classpath
 contapp-web/.settings
 
 contapp-web/target
+
+contapp-phonegap-runner/target
+
+contapp-phonegap-runner/.classpath
+
+contapp-phonegap-runner/.settings
+
+contapp-phonegap-runner/bin/*
+
+contapp-web/src/main/gwt-unitCache
+
+contapp-web/src/main/webapp/WEB-INF/classes
+
+contapp-web/src/main/webapp/WEB-INF/lib
+
+contapp-web/src/main/webapp/contapp
+
+contapp-phonegap-runner/.project
+
+contapp-web/src/main/webapp/WEB-INF/deploy/contapp/rpcPolicyManifest/manifest.txt

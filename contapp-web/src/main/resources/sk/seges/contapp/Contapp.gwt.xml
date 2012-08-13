@@ -10,6 +10,10 @@
 
 		<add-linker name="xsiframe" />
 	
+		<inherits name="com.google.gwt.logging.Logging"/>
+		<set-property name="gwt.logging.simpleRemoteHandler" value="DISABLED" />
+		<set-property name="gwt.logging.popupHandler" value="DISABLED" />
+		
 		<set-configuration-property name="devModeRedirectEnabled" value="true"/>
 		<set-configuration-property name="mgwt.superdevmode" value="on" />
 		

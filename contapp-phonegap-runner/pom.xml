@@ -1,75 +1,76 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-        <parent>
-                <groupId>sk.seges.contapp</groupId>
-                <artifactId>contapp-parent</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-                <relativePath>../contapp-parent</relativePath>
-        </parent>
-        <modelVersion>4.0.0</modelVersion>
-        <artifactId>contapp-phonegap-runner</artifactId>
-        <packaging>jar</packaging>
-        <name>Contapp Phonegap Runner</name>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>sk.seges.contapp</groupId>
+		<artifactId>contapp-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../contapp-parent</relativePath>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>contapp-phonegap-runner</artifactId>
+	<packaging>jar</packaging>
+	<name>Contapp Phonegap Runner</name>
 
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<outputDirectory>bin/classes</outputDirectory>
-	       	<plugins>
+		<plugins>
 			<plugin>
-                                   <groupId>org.codehaus.mojo</groupId>
-                                        <artifactId>build-helper-maven-plugin</artifactId>
-                                        <configuration>
-                                                <sources>
-                                                        <source>gen</source>
-                                                </sources>
-                                        </configuration>
-                                
-					<executions>
-                                                        <execution>
-                                                                <id>add-source</id>
-                                                                <phase>generate-sources</phase>
-                                                                <goals>
-                                                                        <goal>add-source</goal>
-                                                                </goals>
-                                                        </execution>
-                                                </executions>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<configuration>
+					<sources>
+						<source>gen</source>
+					</sources>
+				</configuration>
 
-				</plugin>
-                 
-                       <plugin>
-                                                <groupId>org.apache.maven.plugins</groupId>
-                                                <artifactId>maven-eclipse-plugin</artifactId>
-                                                <configuration>
-                                                        <additionalBuildcommands>
-								<buildCommand>
-									<name>com.android.ide.eclipse.adt.ResourceManagerBuilder</name>
-								</buildCommand>
-								<buildCommand>
-									<name>com.android.ide.eclipse.adt.PreCompilerBuilder</name>
-								</buildCommand>
-                                                                <buildCommand>
-                                                                        <name>om.android.ide.eclipse.adt.ApkBuilder</name>
-                                                                </buildCommand>
-                                                                <buildCommand>
-                                                                        <name>org.eclipse.jdt.core.javabuilder</name>
-                                                                </buildCommand>
-                                                        </additionalBuildcommands>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+					</execution>
+				</executions>
 
-                                                        <additionalProjectnatures>
-                                                                <projectnature>com.android.ide.eclipse.adt.AndroidNature</projectnature>
-								<projectnature>org.eclipse.jdt.core.javanature</projectnature>
-                                                        </additionalProjectnatures>
+			</plugin>
 
-                                                        <classpathContainers>
-                                                                <classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
-                                                        	<classpathContainer>com.android.ide.eclipse.adt.ANDROID_FRAMEWORK</classpathContainer>
-								<classpathContainer>com.android.ide.eclipse.adt.LIBRARIES</classpathContainer>
-							</classpathContainers>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<additionalBuildcommands>
+						<buildCommand>
+							<name>com.android.ide.eclipse.adt.ResourceManagerBuilder</name>
+						</buildCommand>
+						<buildCommand>
+							<name>com.android.ide.eclipse.adt.PreCompilerBuilder</name>
+						</buildCommand>
+						<buildCommand>
+							<name>om.android.ide.eclipse.adt.ApkBuilder</name>
+						</buildCommand>
+						<buildCommand>
+							<name>org.eclipse.jdt.core.javabuilder</name>
+						</buildCommand>
+					</additionalBuildcommands>
 
-							<wtpversion>1.0</wtpversion>
-                                                </configuration>
-                                        </plugin>
-                                </plugins>
-                        </build>
+					<additionalProjectnatures>
+						<projectnature>com.android.ide.eclipse.adt.AndroidNature</projectnature>
+						<projectnature>org.eclipse.jdt.core.javanature</projectnature>
+					</additionalProjectnatures>
+
+					<classpathContainers>
+						<classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
+						<classpathContainer>com.android.ide.eclipse.adt.ANDROID_FRAMEWORK</classpathContainer>
+						<classpathContainer>com.android.ide.eclipse.adt.LIBRARIES</classpathContainer>
+					</classpathContainers>
+
+					<wtpversion>1.0</wtpversion>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
 
